@@ -1,13 +1,14 @@
 <?php
 
+/**
+ * Home
+ */
+Route::view('/', 'welcome');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/crud/{name}', '/')->where('name','[A-Za-z]+');
 
-Route::get('/crud/{name}', function(){
-	return redirect('/');
-})->where('name','[A-Za-z]+');
-
+/**
+ * Crud Operations
+ */
 Route::resource('crud', 'CrudController');
 Route::post('getData', 'CrudController@getData');
