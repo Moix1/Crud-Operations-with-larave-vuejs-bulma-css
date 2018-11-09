@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "bulma": "^0.7.2",
+        "font-awesome": "^4.7.0",
         "vue-router": "^3.0.1"
     }
 }
