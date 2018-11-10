@@ -42,12 +42,11 @@ class CrudController extends Controller
      */
     public function store(CrudRequest $request)
     {
-        $crud = new Crud;
-        $crud->name  = $request->name;
-        $crud->phone = $request->phone;
-        $crud->email = $request->email;
-        $crud->save();
-        return $crud;
+        return Crud::create([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+        ]);
     }
 
     /**
@@ -79,14 +78,12 @@ class CrudController extends Controller
      * @param  \App\Crud  $crud
      * @return \Illuminate\Http\Response
      */
-    public function update(CrudRequest $request)
+    public function update(CrudRequest $request, Crud $crud)
     {
-        $crud = Crud::find($request->id);
-        $crud->name  = $request->name;
+        $crud->name = $request->name;
         $crud->phone = $request->phone;
         $crud->email = $request->email;
         $crud->save();
-
     }
 
     /**
@@ -97,6 +94,6 @@ class CrudController extends Controller
      */
     public function destroy(Crud $crud)
     {
-        Crud::where('id',$crud->id)->delete();
+        $crud->delete();
     }
 }
