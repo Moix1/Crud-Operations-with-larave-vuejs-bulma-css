@@ -15,5 +15,7 @@ Router : Vuejs router used
 
 If you want to contribute and make it better so feel free do it so I will check and approve your contribute
 
+Contact With Me: https://www.facebook.com/mo1ix2
+
 Thanks
 Moiz
